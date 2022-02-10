@@ -186,6 +186,8 @@ namespace HuffmanCompression
             compressedFilesizeText.Text = (new FileInfo(COMPRESSED_FILENAME)).Length.ToString() + " B";
             decompressedFilenameText.Text = DECOMPRESSED_FILENAME;
             decompressedFilesizeText.Text = (new FileInfo(DECOMPRESSED_FILENAME)).Length.ToString() + " B";
+
+            resultData = new int[255];
         }
     }
 }
