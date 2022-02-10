@@ -6,7 +6,48 @@
         xmlns:local="clr-namespace:HuffmanCompression"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFEB9AF3">
+        <StackPanel>
+            <TextBlock Margin="10,39,10,351" TextAlignment="Center" FontSize="20" FontWeight="Bold" Height="34">Kompresja algorytmem Huffmana</TextBlock>
+        </StackPanel>
+        <StackPanel Name="radioStackPanel" Margin="10,76,400,218">
+            <Label FontWeight="Bold" Height="29">Wybierz implementacje biblioteki:</Label>
+            <RadioButton Name="csharpRadioButton" Checked="csharpRadioButton_Checked" Margin="5">C#</RadioButton>
+            <RadioButton Name="assemblyRadioButton" Checked="assemblyRadioButton_Checked" Margin="5">Asembler</RadioButton>
+            <TextBlock x:Name="radioButtonError" Margin="5,0,0,0" Foreground="#FFD81919" FontSize="14" FontWeight="Bold" Height="41" Visibility="Hidden">No option selected!</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,217,400,80">
+            <Label FontWeight="Bold" Height="30">Wybierz plik wejściowy:</Label>
+            <Button Margin="10,0,0,0" x:Name="btnOpenFile" Click="btnOpenFile_Click" Content="Plik wejsciowy" Height="30" Width="133" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10,10,0,0" Name="filenameText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left" TextWrapping="Wrap" TextTrimming="CharacterEllipsis"></TextBlock>
+                <TextBlock Margin="10,10,0,0" Name="filesizeText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+            </StackPanel>
+            <TextBlock x:Name="fileError" Margin="5,0,0,0" Foreground="#FFD81919" FontSize="14" FontWeight="Bold" Height="41" Visibility="Hidden">No file selected!</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,360,400,-13">
+            <Button Margin="10,0,0,0" Click="startButton_Click" Content="Start" Height="30" Width="133" HorizontalAlignment="Left" Background="#FF6EB64D"/>
+        </StackPanel>
+        <StackPanel Name="compressedStackPanel" Orientation="Vertical" Margin="405,76,10,239" Visibility="Hidden">
+            <Label FontWeight="Bold" Height="30">Plik skompresowany:</Label>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10,10,0,0" Name="compressedFilenameText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Margin="10,10,0,0" Name="compressedFilesizeText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+            </StackPanel>
+            <Button Margin="10,0,0,0" x:Name="btnSaveCompressedFile" Click="btnSaveCompressedFile_Click" Content="Pobierz" Height="30" Width="133" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Name="decompressedStackPanel" Orientation="Vertical" Margin="405,200,10,100" Visibility="Hidden">
+            <Label FontWeight="Bold" Height="30">Plik zdekompresowany:</Label>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10,10,0,0" Name="decompressedFilenameText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Margin="10,10,0,0" Name="decompressedFilesizeText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+            </StackPanel>
+            <Button Margin="10,0,0,0" x:Name="btnSaveDecompressedFile" Click="btnSaveDecompressedFile_Click" Content="Pobierz" Height="30" Width="133" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Name="processingTimeStackPanel" Orientation="Vertical" Margin="405,317,10,17" Visibility="Hidden">
+            <Label FontWeight="Bold" Height="30">Czas wykonania:</Label>
+            <TextBlock Margin="10,10,0,0" Name="processingTimeText" TextAlignment="Center" FontSize="14" HorizontalAlignment="Left"></TextBlock>
+        </StackPanel>
 
     </Grid>
 </Window>

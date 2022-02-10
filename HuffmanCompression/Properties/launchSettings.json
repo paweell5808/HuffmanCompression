@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HuffmanCompression": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
