@@ -204,5 +204,15 @@ namespace HuffmanCompression
                 decompressedBits.Add(Convert.ToString(element, 2).PadLeft(8, '0'));
             }
         }
+
+        public int[] countCharFrequency(int[] file, int[] resultFrequency)
+        {
+            foreach (var bytes in file)
+            {
+                resultFrequency[bytes] += 1;
+            }
+
+            return resultFrequency;
+        }
     }
 }

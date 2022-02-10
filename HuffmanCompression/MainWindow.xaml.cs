@@ -155,10 +155,10 @@ namespace HuffmanCompression
 
                 huffman.charFrequency = resultData;
             }
-            //else
-            //{
-            //    Huffman.charFrequency = CountCharFrequency(readFile, resultData);
-            //}
+            else
+            {
+                huffman.charFrequency = huffman.countCharFrequency(readFile, resultData);
+            }
 
             nodeList = huffman.getListFromFile(readFile);
 
